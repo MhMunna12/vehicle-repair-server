@@ -54,13 +54,6 @@ async function run() {
             const result = await servicesCollection.insertOne(body);
             res.send(result);
         })
-
-        app.get('/services', async (req, res) => {
-
-            const serviceData = servicesCollection.find();
-            const result = await serviceData.toArray();
-            res.send(result);
-        })
         app.get('/services', async (req, res) => {
             const search = req.query.search;
             const query = {
